@@ -15,8 +15,8 @@ public class Consumer {
   @Value("${topic.name}")
   private String topicName;
 
-//  @KafkaListener(topics = "users", groupId = "group_id")
-//  public void consume(ConsumerRecord<String, User> record) {
-//    log.info(String.format("Consumed message -> %s", record.value()));
-//  }
+  @KafkaListener(topics = "users", groupId = "group_id")
+  public void consume(ConsumerRecord<String, User> record) {
+    log.info(String.format("Consumed message -> %s", record.value()));
+  }
 }
